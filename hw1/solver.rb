@@ -19,7 +19,7 @@ class Solver
     puts "----------------------------------------------------------"
     puts "--- Output for:                #{file_name} ---------"
     puts "--- Unique Anagrams:           #{num_anagrams} (#{total} total words) --"
-    puts "--- Length of Longest Anagram: #{len_longest} -------------------------"
+    puts "--- Length of Longest Anagram: #{len_longest} characters --------------"
     puts "----------------------------------------------------------"
   end
 
