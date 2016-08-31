@@ -12,39 +12,37 @@ class Solver
 
   def solve
     create_words
-    sort_words
-
     print_output
   end
 
   def print_output
-    puts "-----------------------------------------------------"
-    puts "--- Output for:                #{file_name} ----"
-    puts "--- Unique Anagrams:           #{num_unique} (#{total} total) --"
-    puts "--- Length of Longest Anagram: #{len_longest} --------------------"
-    puts "-----------------------------------------------------"
+    puts "----------------------------------------------------------"
+    puts "--- Output for:                #{file_name} ---------"
+    puts "--- Unique Anagrams:           #{num_anagrams} (#{total} total words) --"
+    puts "--- Length of Longest Anagram: #{len_longest} -------------------------"
+    puts "----------------------------------------------------------"
   end
 
-  def num_unique
-    @words.uniq.length
+  def num_anagrams
+    anagrams.length
   end
 
   def len_longest
-    @words.max_by(&:length).length
+    anagrams.max_by(&:length).length
+  end
+
+  def anagrams
+    @words.group_by{|e| e}.select {|k,v| v.size > 1}.map(&:first)
   end
 
   def total
     @words.length
   end
 
-  def sort_words
-    @words.sort
-  end
-
   def create_words
     file = File.open(file_name, "r")
     file.each_line do |word|
-      add_word(word.downcase.chars.sort.join)
+      add_word(word.chomp.downcase.chars.sort.join)
     end
   end
 
