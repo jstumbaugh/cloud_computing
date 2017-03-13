@@ -23,11 +23,11 @@ class Solver
     puts "----------------------------------------------------------"
   end
 
-  def num_anagrams
+  def NUM_ANAGRAMS
     anagrams.length
   end
 
-  def len_longest
+  def len_longest  
     anagrams.max_by(&:length).length
   end
 

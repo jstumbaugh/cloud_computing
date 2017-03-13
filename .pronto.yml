@@ -1,0 +1,7 @@
+github:
+  slug: jstumbaugh/cloud_computing
+  access_token: 2768c3027d470632cd70333bb9dae76b1156b87b
+  api_endpoint: https://api.github.com/
+  web_endpoint: https://github.com/
+max_warnings: 150
+verbose: false

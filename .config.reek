@@ -1,0 +1,7 @@
+---
+### Generic Smell Configuration for reek
+
+IrresponsibleModule:
+  enabled: false
+
+
